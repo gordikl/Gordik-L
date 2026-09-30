@@ -1,0 +1,308 @@
+<!--allrecords--> <div id="allrecords" data-tilda-export="yes" class="t-records" data-hook="blocks-collection-content-node" data-tilda-project-id="23709763" data-tilda-page-id="151997133" data-tilda-formskey="26448bdb3e0fa90c84f3a79423709763" data-tilda-cookie="no" data-tilda-lazy="yes" data-tilda-root-zone="one" data-tilda-project-country="UA"> <div id="rec2434726283" class="r t-rec" style=" " data-animationappear="off" data-record-type="131"> <!-- T123 --> <div class="t123"> <div class="t-container_100 "> <div class="t-width t-width_100 "> <!-- nominify begin --> <style>
+  #gallery-section {
+    width: 100%;
+  }
+  #gallery-section * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  #gallery-section {
+    background: #1a1108;
+    font-family: 'Jost', sans-serif;
+    color: #f5ede0;
+    padding: clamp(60px, 10vw, 100px) 24px;
+    overflow: hidden;
+  }
+
+  .gl-header {
+    text-align: center;
+    margin-bottom: clamp(40px, 5vw, 60px);
+  }
+  .gl-line {
+    width: 32px;
+    height: 1px;
+    background: rgba(193,152,79,0.7);
+    margin: 0 auto 16px;
+  }
+  .gl-label {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(193,152,79,0.8);
+    margin-bottom: 16px;
+  }
+  .gl-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 500;
+    line-height: 1.08;
+    color: #f5ede0;
+  }
+  .gl-title em { font-style: italic; color: #c1984f; }
+
+  /* --- ФІЛЬТРИ --- */
+  .gl-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: clamp(32px, 4vw, 48px);
+  }
+  .gl-filter {
+    padding: 8px 20px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 1px solid rgba(245,237,224,0.2);
+    background: transparent;
+    color: rgba(245,237,224,0.5);
+    cursor: pointer;
+    border-radius: 2px;
+    font-family: 'Jost', sans-serif;
+    transition: all 0.25s;
+  }
+  .gl-filter:hover,
+  .gl-filter.active {
+    background: #c1984f;
+    border-color: #c1984f;
+    color: #1a1108;
+  }
+
+  /* --- СІТКА --- */
+.gl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto 40px;
+  }
+
+  .gl-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 1/1;
+    background: #0d0a06;
+  }
+
+  .gl-item.wide { grid-column: span 2; aspect-ratio: 2/1; }
+  .gl-item.tall { grid-row: span 2; aspect-ratio: 1/2; }
+
+  .gl-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease, filter 0.4s ease;
+    filter: brightness(0.85) sepia(0.1);
+  }
+  .gl-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.7) sepia(0.15);
+  }
+
+  .gl-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15,9,3,0.85) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+  }
+  .gl-item:hover .gl-item-overlay { opacity: 1; }
+
+  .gl-item-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #f5ede0;
+    margin-bottom: 4px;
+  }
+  .gl-item-tag {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c1984f;
+  }
+
+  .gl-item-zoom {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    background: rgba(193,152,79,0.85);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    color: #1a1108;
+  }
+  .gl-item-zoom svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+  .gl-item:hover .gl-item-zoom { opacity: 1; }
+
+  /* --- ЛАЙТБОКС --- */
+  .gl-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,7,3,0.95);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .gl-lightbox.open { display: flex; }
+  .gl-lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 2px;
+  }
+  .gl-lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: rgba(245,237,224,0.7);
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 1;
+    font-family: sans-serif;
+    transition: color 0.2s;
+  }
+  .gl-lightbox-close:hover { color: #c1984f; }
+  .gl-lightbox-prev,
+  .gl-lightbox-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(193,152,79,0.15);
+    border: 1px solid rgba(193,152,79,0.3);
+    color: #c1984f;
+    width: 48px;
+    height: 48px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .gl-lightbox-prev { left: 16px; }
+  .gl-lightbox-next { right: 16px; }
+  .gl-lightbox-prev:hover,
+  .gl-lightbox-next:hover { background: rgba(193,152,79,0.35); }
+
+  /* --- КНОПКА --- */
+  .gl-btn-wrap {
+    text-align: center;
+    margin-top: 8px;
+  }
+  .gl-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    background: transparent;
+    color: #f5ede0 !important;
+    border: 1px solid rgba(245,237,224,0.35);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    transition: border-color 0.25s, background 0.25s;
+  }
+  .gl-btn:hover {
+    border-color: #c1984f;
+    background: rgba(193,152,79,0.08);
+  }
+
+  @media (max-width: 768px) {
+    .gl-grid { grid-template-columns: repeat(2, 1fr); }
+    .gl-item.wide { grid-column: span 2; }
+    .gl-item.tall { grid-row: span 1; aspect-ratio: 1/1; }
+  }
+  @media (max-width: 480px) {
+    .gl-grid { grid-template-columns: 1fr; }
+    .gl-item.wide { grid-column: span 1; aspect-ratio: 1/1; }
+  }
+</style> <section id="gallery-section" aria-label="Наші роботи"> <div class="gl-header"> <div class="gl-line"></div> <p class="gl-label">Портфоліо</p> <h2 class="gl-title">Наші <em>роботи</em></h2> </div> <div class="gl-filters"> <button class="gl-filter active" data-filter="all">Всі роботи</button> <button class="gl-filter" data-filter="bags">Сумки</button> <button class="gl-filter" data-filter="wallets">Гаманці</button> <button class="gl-filter" data-filter="belts">Ремені</button> <button class="gl-filter" data-filter="repair">Ремонт</button> </div> <div class="gl-grid" id="glGrid"> <!-- ЗМІНИТИ: замініть src на свої фото --> <div class="gl-item wide" data-category="bags"> <img src="images/tild3231-6639-4161-b633-303761363262__chatgpt_image_1__202.png" alt="Сумка ручної роботи зі шкіри поні." loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Сумка ручної роботи зі шкіри поні</p> <p class="gl-item-tag">Сумки</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item tall" data-category="wallets"> <img src="images/tild3431-6232-4161-a631-353830643536__6_1.png" alt="Шкіряний ридикюль крокодил." loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Luxury Croco Boston Bag.</p> <p class="gl-item-tag">Сумки</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item tall" data-category="wallets"> <img src="images/tild6161-3362-4763-a330-633239656239__5_1.png" alt="Шкіряний радикюль." loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Ридикюль, принт ящірка.</p> <p class="gl-item-tag">Сумки</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item tall" data-category="wallets"> <img src="images/tild6639-6332-4063-a132-386536633966__2.png" alt="Сумка-барабан." loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Шкіряна сумка-барабан.</p> <p class="gl-item-tag">Сумки</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item" data-category="bags"> <img src="images/tild6361-6636-4531-a464-386235316162__2_1.png" alt="Шкіряна сумка смарагдового кольору" loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Смарагдовий Croco Tote</p> <p class="gl-item-tag">Сумки</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item" data-category="bags"> <img src="images/tild6235-3634-4239-b631-313338366330__1_1.png" alt="Сумка принт змія" loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Сумка принт змія</p> <p class="gl-item-tag">Сумки</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item" data-category="bags"> <img src="images/tild6436-6338-4635-b832-626566396236__4.png" alt="Шкіряна сумка літо" loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Сумка-саквояж літній</p> <p class="gl-item-tag">Сумки</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item" data-category="belts"> <img src="images/tild3836-3434-4137-a466-343034633137__chatgpt_image_15__20.png" alt="Шкіряний ремінь" loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Класичний ремінь зі шкіри крокодила</p> <p class="gl-item-tag">Ремені</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item tall" data-category="wallets"> <img src="images/tild3130-6466-4838-b333-373765306232__photo.png" alt="Шкіряна сумка ручної роботи." loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Шкіряний шопер-поні.</p> <p class="gl-item-tag">Сумки</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item" data-category="repair"> <img src="images/tild3630-6237-4663-a431-623035336534__chatgpt_image_22__20.png" alt="Ремонт шкіряного виробу" loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Клатч-гаманець</p> <p class="gl-item-tag">Гаманець</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item" data-category="repair"> <img src="images/tild6365-3166-4461-b431-356134613435__chatgpt_image_15__20.png" alt="Ремонт шкіряного виробу" loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Шкіряна сумка з клапаном зі шкіри змії</p> <p class="gl-item-tag">Сумки</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item" data-category="wallets"> <img src="images/tild3662-6666-4533-b362-643931623263__chatgpt_image_15__20.png" alt="Шкіряний гаманець" loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Картхолдер з крокодилової шкіри</p> <p class="gl-item-tag">Гаманці</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item" data-category="wallets"> <img src="images/tild6265-6364-4264-b464-376236386366__chatgpt_image_18__20.png" alt="Повсякденна сумка" loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Гаманці</p> <p class="gl-item-tag">Сумки</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item wide" data-category="bags"> <img src="images/tild6431-3538-4137-b762-333639346465__3.png" alt="Шкіряний дорожній саквояж" loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Вінтажний шкіряний ретро-саквояж Camo</p> <p class="gl-item-tag">Сумки</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item tall" data-category="wallets"> <img src="images/tild6162-3332-4361-a531-313236646439__chatgpt_image_15__20.png" alt="Шкіра долар." loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Сумка з клапаном.</p> <p class="gl-item-tag">Сумки</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item wide" data-category="bags"> <img src="images/tild3334-6361-4731-a138-373136396633__chatgpt_image_15__20.png" alt="Шкіряна сумка" loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Чоловічий гаманець</p> <p class="gl-item-tag">Гаманці
+      <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item" data-category="belts"> <img src="images/tild3836-3434-4137-a466-343034633137__chatgpt_image_15__20.png" alt="Шкіряний ремінь" loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Класичний ремінь зі шкіри крокодила</p> <p class="gl-item-tag">Ремені</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item" data-category="belts"> <img src="images/tild3130-6466-4838-b333-373765306232__photo.png" alt="Шопер-поні" loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Шопер, шкіра поні.</p> <p class="gl-item-tag">Ремені</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item" data-category="belts"> <img src="images/tild3735-3465-4662-a161-656163386164__chatgpt_image_8__202.png" alt="Сумочка вечірня" loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Сумочка вечірня.</p> <p class="gl-item-tag">Ремені</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> <div class="gl-item tall" data-category="wallets"> <img src="images/tild6162-3332-4361-a531-313236646439__chatgpt_image_15__20.png" alt="Шкіра." loading="lazy"> <div class="gl-item-overlay"> <p class="gl-item-title">Сумка з клапаном.</p> <p class="gl-item-tag">Сумки</p> </div> <div class="gl-item-zoom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div> </div> </div> <div class="gl-btn-wrap"> <a class="gl-btn" href="#portfolio">Дивитись більше робіт</a> </div> </section> <!-- ЛАЙТБОКС --> <div class="gl-lightbox" id="glLightbox"> <button class="gl-lightbox-close" id="glClose">&times;</button> <button class="gl-lightbox-prev" id="glPrev">&#8249;</button> <img class="gl-lightbox-img" id="glLightboxImg" src="" alt=""> <button class="gl-lightbox-next" id="glNext">&#8250;</button> </div> <script>
+(function(){
+  function loadFont(url) {
+    var s = document.createElement('style');
+    s.textContent = "@import url('" + url + "');";
+    document.head.appendChild(s);
+  }
+  loadFont('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Jost:wght@300;400;600&display=swap');
+
+  var filters = document.querySelectorAll('.gl-filter');
+  var items = document.querySelectorAll('.gl-item');
+
+  filters.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filters.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var cat = btn.getAttribute('data-filter');
+      items.forEach(function(item) {
+        if (cat === 'all' || item.getAttribute('data-category') === cat) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  var lightbox = document.getElementById('glLightbox');
+  var lbImg = document.getElementById('glLightboxImg');
+  var allImgs = [];
+  var currentIdx = 0;
+
+  items.forEach(function(item, i) {
+    var img = item.querySelector('img');
+    allImgs.push(img.src);
+    item.addEventListener('click', function() {
+      currentIdx = i;
+      lbImg.src = allImgs[currentIdx];
+      lightbox.classList.add('open');
+    });
+  });
+
+  document.getElementById('glClose').addEventListener('click', function() {
+    lightbox.classList.remove('open');
+  });
+  document.getElementById('glPrev').addEventListener('click', function() {
+    currentIdx = (currentIdx - 1 + allImgs.length) % allImgs.length;
+    lbImg.src = allImgs[currentIdx];
+  });
+  document.getElementById('glNext').addEventListener('click', function() {
+    currentIdx = (currentIdx + 1) % allImgs.length;
+    lbImg.src = allImgs[currentIdx];
+  });
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) lightbox.classList.remove('open');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+    if (e.key === 'ArrowLeft') { currentIdx = (currentIdx - 1 + allImgs.length) % allImgs.length; lbImg.src = allImgs[currentIdx]; }
+    if (e.key === 'ArrowRight') { currentIdx = (currentIdx + 1) % allImgs.length; lbImg.src = allImgs[currentIdx]; }
+  });
+})();
+</script> <!-- nominify end --> </div> </div> </div> </div> </div> <!--/allrecords-->

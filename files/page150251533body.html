@@ -1,0 +1,313 @@
+<!--allrecords--> <div id="allrecords" data-tilda-export="yes" class="t-records" data-hook="blocks-collection-content-node" data-tilda-project-id="23709763" data-tilda-page-id="150251533" data-tilda-page-alias="doipislya" data-tilda-formskey="26448bdb3e0fa90c84f3a79423709763" data-tilda-cookie="no" data-tilda-lazy="yes" data-tilda-root-zone="one" data-tilda-project-country="UA"> <div id="rec2404990053" class="r t-rec" style=" " data-animationappear="off" data-record-type="131"> <!-- T123 --> <div class="t123"> <div class="t-container_100 "> <div class="t-width t-width_100 "> <!-- nominify begin --> <style>
+#before-after-section {
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+  }
+  #before-after-section * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  #before-after-section {
+    background: #1a1108;
+    font-family: 'Jost', sans-serif;
+    color: #f5ede0;
+    padding: clamp(60px, 10vw, 100px) 24px;
+    overflow: hidden;
+  }
+
+  .ba-header {
+    text-align: center;
+    margin-bottom: clamp(40px, 5vw, 60px);
+  }
+  .ba-line {
+    width: 32px;
+    height: 1px;
+    background: rgba(193,152,79,0.7);
+    margin: 0 auto 16px;
+  }
+  .ba-label {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(193,152,79,0.8);
+    margin-bottom: 16px;
+  }
+  .ba-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 500;
+    line-height: 1.08;
+    color: #f5ede0;
+    margin-bottom: 14px;
+  }
+  .ba-title em { font-style: italic; color: #c1984f; }
+  .ba-subtitle {
+    font-size: 13px;
+    color: rgba(245,237,224,0.45);
+    letter-spacing: 0.05em;
+  }
+
+  /* --- СЛАЙДЕР ПОРІВНЯННЯ --- */
+ .ba-slider {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 2px;
+    cursor: ew-resize;
+    user-select: none;
+    touch-action: none;
+  }
+
+  .ba-img-wrap {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .ba-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+  }
+
+  .ba-after-wrap {
+    position: absolute;
+    inset: 0;
+    width: 50%;
+    overflow: hidden;
+  }
+  .ba-after-wrap img {
+    width: 200%;
+    max-width: none;
+  }
+
+  .ba-after-wrap {
+    width: var(--ba-pos, 50%);
+  }
+  .ba-after-wrap img {
+    width: calc(100% / (var(--ba-pos-ratio, 0.5)));
+    height: 100%;
+  }
+
+  .ba-tags {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .ba-tag {
+    padding: 6px 14px;
+    background: rgba(15,9,3,0.7);
+    border: 1px solid rgba(193,152,79,0.4);
+    color: #c1984f;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+
+  /* Розділювач */
+  .ba-divider-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--ba-pos, 50%);
+    width: 2px;
+    background: #c1984f;
+    transform: translateX(-50%);
+    z-index: 4;
+    pointer-events: none;
+    box-shadow: 0 0 12px rgba(193,152,79,0.6);
+  }
+  .ba-handle {
+    position: absolute;
+    top: 50%;
+    left: var(--ba-pos, 50%);
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    background: #c1984f;
+    border-radius: 50%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    pointer-events: none;
+  }
+  .ba-handle svg {
+    width: 20px;
+    height: 20px;
+    stroke: #1a1108;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* --- Навігація між парами фото --- */
+  .ba-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .ba-nav-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(245,237,224,0.2);
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s;
+  }
+  .ba-nav-dot.active {
+    background: #c1984f;
+    transform: scale(1.3);
+  }
+
+  .ba-caption {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: rgba(245,237,224,0.6);
+    font-weight: 300;
+    min-height: 20px;
+  }
+
+  /* --- КНОПКА --- */
+  .ba-btn-wrap {
+    text-align: center;
+    margin-top: clamp(36px, 5vw, 56px);
+  }
+  .ba-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #c1984f;
+    color: #000000 !important;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    transition: background 0.25s ease, transform 0.2s ease;
+  }
+  .ba-btn:hover {
+    background: #d4ac61;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 600px) {
+    #before-after-section { padding: 48px 16px; }
+  }
+</style> <section id="before-after-section" aria-label="До та після ремонту"> <div class="ba-header"> <div class="ba-line"></div> <p class="ba-label">Результати роботи</p> <h2 class="ba-title">До та <em>після</em></h2> <p class="ba-subtitle">Потягніть розділювач, щоб побачити різницю</p> </div> <div class="ba-slider" id="baSlider"> <div class="ba-img-wrap"> <!-- ФОТО "ПІСЛЯ" — ЗМІНИТИ src --> <img id="baBeforeImg" src="images/tild6264-3138-4835-a538-653534633363__chatgpt_image_30__20.png" alt="Сумка до ремонту"> </div> <div class="ba-after-wrap" id="baAfterWrap"> <!-- ФОТО "ДО" — ЗМІНИТИ src --> <img id="baAfterImg" src="images/tild3965-6438-4334-b135-333664626330__chatgpt_image_1__202.png" alt="Сумка після ремонту"> </div> <div class="ba-tags"> <span class="ba-tag">До</span> <span class="ba-tag">Після</span> </div> <div class="ba-divider-line" id="baDividerLine"></div> <div class="ba-handle" id="baHandle"> <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/><polyline points="9 18 15 12 9 6" transform="translate(6,0)"/></svg> </div> </div> <p class="ba-caption" id="baCaption">Реставрація шкіряної сумки — заміна підкладки, відновлення кольору та заміна каркасу сумки після втрати форми</p> <!-- ЗМІНИТИ: додай/видали пари фото тут --> <div class="ba-nav" id="baNav"> <div class="ba-nav-dot active" data-index="0"></div> <div class="ba-nav-dot" data-index="1"></div> <div class="ba-nav-dot" data-index="2"></div> </div> <div class="ba-btn-wrap"> <a class="ba-btn" href="#consultation">Замовити консультацію</a> </div> </section> <script>
+(function(){
+  function loadFont(url) {
+    var s = document.createElement('style');
+    s.textContent = "@import url('" + url + "');";
+    document.head.appendChild(s);
+  }
+  loadFont('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Jost:wght@300;400;600&display=swap');
+
+  /* ЗМІНИТИ: список пар фото "до/після" + підпис */
+  var pairs = [
+    {
+      before: 'https://images.unsplash.com/photo-1605733513597-a8f8341084e6?w=900&q=80',
+      after:  'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=900&q=80',
+      caption: 'Реставрація шкіряної сумки — заміна фурнітури та відновлення кольору'
+    },
+    {
+      before: 'https://images.unsplash.com/photo-1473188588951-666fce8e7c68?w=900&q=80',
+      after:  'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=900&q=80',
+      caption: 'Відновлення ручок та торцювання краю'
+    },
+    {
+      before: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=900&q=80',
+      after:  'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=900&q=80',
+      caption: 'Реставрація гаманця — заміна підкладки та фурнітури'
+    }
+  ];
+
+  var slider = document.getElementById('baSlider');
+  var afterWrap = document.getElementById('baAfterWrap');
+  var beforeImg = document.getElementById('baBeforeImg');
+  var afterImg = document.getElementById('baAfterImg');
+  var dividerLine = document.getElementById('baDividerLine');
+  var handle = document.getElementById('baHandle');
+  var caption = document.getElementById('baCaption');
+  var dots = document.querySelectorAll('.ba-nav-dot');
+  var currentPair = 0;
+  var pos = 50;
+
+  function setPos(percent) {
+    pos = Math.max(5, Math.min(95, percent));
+    afterWrap.style.width = pos + '%';
+    dividerLine.style.left = pos + '%';
+    handle.style.left = pos + '%';
+  }
+
+  function loadPair(idx) {
+    currentPair = idx;
+    var p = pairs[idx];
+    beforeImg.src = p.before;
+    afterImg.src = p.after;
+    caption.textContent = p.caption;
+    dots.forEach(function(d, i) {
+      d.classList.toggle('active', i === idx);
+    });
+    setPos(50);
+  }
+
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      loadPair(parseInt(dot.getAttribute('data-index')));
+    });
+  });
+
+  var dragging = false;
+
+  function getPercentFromEvent(e) {
+    var rect = slider.getBoundingClientRect();
+    var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    var percent = ((clientX - rect.left) / rect.width) * 100;
+    return percent;
+  }
+
+  function startDrag(e) {
+    dragging = true;
+    e.preventDefault();
+  }
+  function stopDrag() {
+    dragging = false;
+  }
+  function onDrag(e) {
+    if (!dragging) return;
+    setPos(getPercentFromEvent(e));
+  }
+
+  slider.addEventListener('mousedown', startDrag);
+  slider.addEventListener('touchstart', startDrag, { passive: false });
+  window.addEventListener('mouseup', stopDrag);
+  window.addEventListener('touchend', stopDrag);
+  window.addEventListener('mousemove', onDrag);
+  window.addEventListener('touchmove', onDrag, { passive: false });
+
+  slider.addEventListener('click', function(e) {
+    if (e.target.closest('.ba-handle')) return;
+    setPos(getPercentFromEvent(e));
+  });
+
+  setPos(50);
+})();
+</script> <!-- nominify end --> </div> </div> </div> </div> </div> <!--/allrecords-->
